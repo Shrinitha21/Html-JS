@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src=
+	"https://ajax.googleapis.com/ajax/libs/
+	jquery/3.3.1/jquery.min.js">
+	</script>
+	<!-- Popper JS -->
+	<script src=
+	"https://cdnjs.cloudflare.com/ajax/libs/
+	popper.js/1.12.9/umd/popper.min.js">
+	</script>
+	<!-- Latest compiled JavaScript -->
+	<script src=
+	"https://maxcdn.bootstrapcdn.com/bootstrap/
+	4.0.0/js/bootstrap.min.js">
+	</script>
+</head>
+
+<body>
+
+	<h1 class="text-center">
+	FORM VALIDATION 
+	</h1>
+
+	<div class="container">
+	<div class="col-lg-8 m-auto d-block">
+
+		<form action="submit.html">
+			<h2>CONTACT INFORMATION</h2>
+		<div class="form-group">
+			<label for ="user">
+				Username:<abbr title="required">*</abbr>
+			</label>
+			<input type="text" name="username" id="usernames" class="form-control">
+			<h5 id="usercheck" style="color: red;" >
+					**Username is missing
+			</h5>
+		</div>
+
+
+		<div class="form-group">
+			<label for="user">
+					Email:<abbr title="required">*</abbr>
+			</label>
+			<input type="email" name="email" id="email" required class="form-control">
+			<small id="emailvalid" class="form-text text-muted invalid-feedback">
+					Your email must be a valid email
+			</small>
+		</div>
+
+		<div class="form-group">
+			<label for="password">
+					Password:<abbr title="required">*</abbr>
+			</label>
+			<input type="password" name="pass" id="password" class="form-control">
+			<h5 id="passcheck" style="color: red;">
+				**Please Fill the password
+			</h5>
+		</div>
+		<h2>PAYMENT DETAILS</h2>
+		<div class="form-group">
+			<label>Card Type:</label>
+			<select id="card" name="usercard">
+        <option value="visa" id="visa">Visa</option>
+        <option value="mc" id="mc">Mastercard</option>
+        <option value="amex" id="amex">American Express</option>
+      </select>
+			
+		</div>
+		<div class="form-group">
+			<label>Card Number:<abbr title="required">*</abbr></label>
+			
+			<input type="number" id="quantity" name="quantity"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "16">
+
+			<h5 id="nocheck" style="color: red;">
+				**Please Fill the number
+			</h5>
+		</div>
+		<div class="form-group">
+			<label>CVV:<abbr title="required">*</abbr></label>
+			<input type="number" id="quantity" name="quantity"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "3" minlength="3">
+
+		</div>
+		<div class="form-group">
+			<label>Expiry Date:<abbr title="required">*</abbr></label>
+			<input type="date" name="Dates" id="dates" class="form-group">
+		</div>
+
+		<input type="submit" id="submitbtn" value="Submit" class="btn btn-primary" onclick="submit.html">
+		<input type="reset" id="resetbtn" value="reset" class="reset btn-primary">
+		</form>
+	</div>
+	</div>
+
+	<!-- Including app.js jQuery Script -->
+	<script src="app.js"></script>
+</body>
+</html>
